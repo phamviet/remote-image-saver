@@ -3,7 +3,7 @@
 Plugin Name: Remote Image Saver
 Plugin URI: https://phamviet.net
 Description: Parse remote image links on saving to download and store it in local server.
-Version: 0.1
+Version: 1.0
 Author: Viet Pham
 Author URI: https://phamviet.net
 License: GPL
@@ -51,10 +51,10 @@ register_uninstall_hook(
 );
 
 // autoload register
-spl_autoload_register( 'cache_autoload' );
+spl_autoload_register( 'rms_autoload' );
 
 // autoload function
-function cache_autoload( $class ) {
+function rms_autoload( $class ) {
 	if ( in_array( $class, [ 'Remote_Image_Saver' ] ) ) {
 		require_once(
 		sprintf(
